@@ -18,15 +18,15 @@
     <div id="votingContainer">
         <div id="optionsContainer">
             <div class="box-wrapper">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="box" id="box1">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="box" id="box1">
                     <h3 class="heading-wrapper">
 
                         <!-- First Box -->
                         <span class="text1">XYZ</span>
                     </h3>
-                    <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
-                    <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
-                    <h2>&nbsp;&nbsp; Working <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Working <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
                     <div class="textbox-container ">                        <div class="word-count">0 / 100</div>
                         <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="500" required></textarea>
                     </div>
@@ -37,9 +37,9 @@
                     <h3 class="heading-wrapper">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text2">ABC</span>
                     </h3>
-                    <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
-                    <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
-                    <h2>&nbsp;&nbsp; Working <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Working <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
                     <div class="textbox-container">
                         <div class="word-count">0 / 100</div>
                         <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="500" required></textarea>
@@ -48,13 +48,13 @@
 
                 <!-- Third Box -->
                 <div class="box-wrapper">
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="box" id="box4">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="box" id="box4">
                         <h3 class="heading-wrapper">
                             <span class="text1">XaZ</span>
                         </h3>
-                        <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
-                        <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
-                        <h2>&nbsp;&nbsp; Working <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
+                        <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Working <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
                         <div class="textbox-container">
                             <div class="word-count">0 / 100</div>
                             <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="500" required></textarea>
@@ -66,9 +66,9 @@
                         <h3 class="heading-wrapper">
                             <span class="text1">XSZ</span>
                         </h3>
-                        <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
-                        <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
-                        <h2>&nbsp;&nbsp; Working <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
+                        <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Working <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
                         <div class="textbox-container">
                             <div class="word-count">0 / 100</div>
                             <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="500" required></textarea>
