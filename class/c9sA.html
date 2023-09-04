@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style2.css">
+    <title>Voting Page</title>
+</head>
+<body>
+<div class="box" id="top">
+    <h1>Medi-Caps International School</h1>
+</div>
+<center>
+    <h1>Teacher Rating</h1>
+</center>
+<form id="login-form" name="login-form">
+    <div id="votingContainer">
+        <div id="optionsContainer">
+            <div class="box-wrapper">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="box" id="box1">
+                    <h3 class="heading-wrapper">
+
+                        <!-- First Box -->
+                        <span class="text1">XYZ</span>
+                    </h3>
+                    <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Working <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
+                    <div class="textbox-container">
+                        <div class="word-count">0 / 100</div>
+                        <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="500" required></textarea>
+                    </div>
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <!-- Second Box -->
+                <div class="box" id="box2">
+                    <h3 class="heading-wrapper">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text2">ABC</span>
+                    </h3>
+                    <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Working <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
+                    <div class="textbox-container">
+                        <div class="word-count">0 / 100</div>
+                        <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="500" required></textarea>
+                    </div>
+                </div><br><br><br>
+
+                <!-- Third Box -->
+                <div class="box-wrapper">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="box" id="box4">
+                        <h3 class="heading-wrapper">
+                            <span class="text1">XaZ</span>
+                        </h3>
+                        <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
+                        <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
+                        <h2>&nbsp;&nbsp; Working <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
+                        <div class="textbox-container">
+                            <div class="word-count">0 / 100</div>
+                            <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="500" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Fourth Box -->
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="box" id="box3">
+                        <h3 class="heading-wrapper">
+                            <span class="text1">XSZ</span>
+                        </h3>
+                        <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
+                        <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
+                        <h2>&nbsp;&nbsp; Working <span class="emoji-button" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" onclick="vote(this)">&#128578;</span> <span class="emoji-button"></span> <span class="emoji-button" onclick="vote(this)">&#128532;</span> <span class="emoji-button" onclick="vote(this)">&#128544;</span></h2>
+                        <div class="textbox-container">
+                            <div class="word-count">0 / 100</div>
+                            <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="500" required></textarea>
+                        </div>
+                    </div>
+                    <center><br><br>
+                        <button type="submit" onclick="submitVote()">Submit</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</center>
+</div>
+<div class="box" id="btm1">
+    <center>
+        <h1>Developed by Vinesh Katara of X-C</h1>
+    </center>
+</div>
+<script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbx3UyH-5WQUxk5AmZCFtk1daqVGtwARlzv87o75t4l696PeU3zbsieIsFJK0F7p2d-92A/exec"
+    const form = document.forms['login-form']
+
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => alert('Success!', response))
+            .catch(error => alert('Error!', error.message))
+    })
+
+    function submitVote() {
+        const selectedOptionBoy = document.querySelector('input[name="head-boy"]:checked');
+        const selectedOptionGirl = document.querySelector('input[name="head-girl"]:checked');
+
+        if (selectedOptionBoy && selectedOptionGirl) {
+            const selectedValueBoy = selectedOptionBoy.value;
+            const selectedValueGirl = selectedOptionGirl.value;
+            vote(selectedValueBoy);
+            vote(selectedValueGirl);
+            window.location.href = 'thank.html';
+        } else {
+            alert('Please select an option for both Head Boy and Head Girl.');
+        }
+    }
+
+    // JavaScript code to handle emoji button clicks
+function vote(emoji) {
+    const buttons = emoji.parentElement.querySelectorAll('.emoji-button');
+    const row = emoji.closest('.box-wrapper');
+    
+    buttons.forEach(button => button.classList.remove('clicked'));
+    emoji.classList.add('clicked');
+
+    
+    }
+
+// Function to submit the vote
+function submitVote() {
+    const totalEmojiButtons = document.querySelectorAll('.emoji-button').length;
+    const selectedEmojis = document.querySelectorAll('.emoji-button.clicked');
+
+    if (selectedEmojis.length === totalEmojiButtons) {
+        // You can process the selected emojis here
+        window.location.href = 'thank.html';
+    } else {
+        alert('Please select an emoji for each category.');
+    }
+}
+
+
+    // Get all textarea elements with the class "word-limit-textarea"
+    const textareas = document.querySelectorAll('.word-limit-textarea');
+
+    // Add an input event listener to each textarea
+    textareas.forEach(textarea => {
+        const wordCountDisplay = textarea.previousElementSibling; // Get the word count display element
+
+        textarea.addEventListener('input', function () {
+            // Get the current text from the textarea
+            const text = this.value;
+
+            // Split the text into words (split by spaces)
+            const words = text.trim().split(/\s+/);
+
+            // Count the number of words
+            const wordCount = words.length;
+
+            // Update the word count display
+            wordCountDisplay.textContent = `${wordCount} / 1000`;
+
+            // Disable the textarea if the word limit is exceeded
+            if (wordCount > 100) {
+                textarea.value = text.split(/\s+/).slice(0, 100).join(' ');
+                wordCountDisplay.style.color = 'red';
+                textarea.style.borderColor = 'red';
+                textarea.disabled = true;
+            } else {
+                wordCountDisplay.style.color = 'gray';
+                textarea.style.borderColor = '';
+                textarea.disabled = false;
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
