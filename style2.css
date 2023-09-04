@@ -317,7 +317,7 @@ input[type='password']{
 
 #box2{
     width: 700px;
-    height: 490px;
+    height: 650px;
 }
 #box2 h3{
     font-size: 50px;
@@ -326,8 +326,8 @@ input[type='password']{
     font-size: 40px;
 }
 #box1{
-    width: 740px;
-    height: 500px;
+    width: 700px;
+    height: 650px;
 }
 #box1 h3{
     font-size: 50px;
@@ -335,6 +335,7 @@ input[type='password']{
 #box1 label{
     font-size: 40px;
 }
+
 
 label img{
     height: 80px;
@@ -358,19 +359,53 @@ select {
     font-family: Georgia, serif;
 }
 
+.emoji-button-group {
+    display: flex;
+    gap: 10px;
+}
+
 .emoji-button {
-    font-size: 24px;
+    font-size: 34px;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
     margin: 0;
+    position: relative;
 }
 
-.emoji-button:active {
-    transform: scale(1.2);
+.emoji-button::before {
+    content: "\2713"; /* Checkmark symbol */
+    font-size: 20px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    color: green;
+    display: none;
 }
 
 .emoji-button:hover {
     cursor: pointer;
-  }
+}
+
+.emoji-button.clicked::before {
+    display: inline-block;
+}
+.textbox-container {
+    position: relative;
+    width: 300px;
+    margin: 10px;
+}
+
+.word-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    color: black;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+}
