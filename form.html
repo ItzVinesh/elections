@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Access Database Form</title>
+</head>
+<body>
+    <h1>Data Entry Form</h1>
+    <form id="dataForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email"><br><br>
+
+        <input type="button" value="Submit" onclick="submitData()">
+    </form>
+
+    <script>
+        function submitData() {
+            try {
+                var conn = new ActiveXObject("ADODB.Connection");
+                var connStr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=/home/vinesh/Documents/Database1.accdb;";
+
+                conn.Open(connStr);
+
+                var rs = new ActiveXObject("ADODB.Recordset");
+                rs.Open("INSERT INTO TableName (Name, Email) VALUES ('" + document.getElementById('name').value + "', '" + document.getElementById('email').value + "')", conn);
+
+                rs.Close();
+                conn.Close();
+
+                alert("Data successfully submitted!");
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+            } catch (e) {
+                alert("An error occurred: " + e.message);
+            }
+        }
+    </script>
+</body>
+</html>
