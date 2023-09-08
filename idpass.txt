@@ -1,0 +1,4 @@
+username - vineshakatar75@gmail.com
+password - 21259076B561359FAB314FF055CFCAD8DA3A
+server - smtp.elasticemail.com
+port - 2525
