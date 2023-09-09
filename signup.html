@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel = "icon" href = "logo.png" type = "image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up Page</title>
@@ -18,7 +19,7 @@
         }
 
         .login-container {
-            width: 300px;
+            width: 400px;
             background: rgba(255, 255, 255, 0.377);
             padding: 20px;
             border-radius: 5px;
@@ -56,47 +57,64 @@
         }
 
         .form-group input[type="submit"] {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
+            background-color: transparent;
+            color: black;
+            border: 1px black;
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 3px;
+            font-size: 17px;
         }
 
         .form-group input[type="submit"]:hover {
             background-color: #0056b3;
+            color: white;
         }
-    </style>
+    /* Style the dropdown container */
+    .form-group select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 3px;
+        appearance: none; /* Remove default arrow */
+        background-size: 16px; /* Set arrow size */
+        cursor: pointer;
+    }
+
+    /* Style the dropdown options */
+    .form-group select option {
+        background-color: #fff;
+        color: #000;
+    }
+</style>
 </head>
 <body>
     <div class="login-container">
         <div class="login-header">
             <h2>Login</h2>
         </div>
-        <form>
+        <form action="https://script.google.com/macros/s/AKfycby9T7PptxemOkWYIQzwjifsx3lQ7ur0-AD8V-tp7AUHvSOsncIt9fFxTXs0c30qQUYUew/exec" method="post">
             <div class="form-group">
                 <label for="username">Name</label>
                 <input type="text" id="username" name="username" required>
             </div>
             <div class="form-group">
                 <label for="username">School</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="school" name="school" required>
             </div>
             <div class="form-group">
                 <label for="username">Scholar Number</label>
-                <input type="number" id="username" name="username" required>
+                <input type="number" id="scno" name="scno" required>
             </div>
             <div class="form-group">
                 <label for="username">Email</label>
-                <input type="email" id="username" name="username" required>
+                <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
                 <label for="class">Class:</label>
                 <select name="class" required>
-                    <option value="9th">9th</option>
-                    <option value="11th">11th</option>
+                    <option value="9th" selected>9th</option>
                     <option value="10th">10th</option>
+                    <option value="11th">11th</option>
                     <option value="12th">12th</option>
                 </select><br>
                 
@@ -105,51 +123,39 @@
                 
                 <label for="section">Section:</label>
                 <select name="section" required>
+                    <option value="A" selected>A</option>
                     <option value="B">B</option>
                     <option value="C">C</option>
                     <option value="D">D</option>
                 </select><br>
             </div>
             <div class="form-group">
-                <input type="submit" value="Login">
+                <center>
+                    <input type="submit" value="Login">
+                </center>
             </div>
         </form>
     </div>
     <script>
-        const scriptURL = "https://script.google.com/macros/s/AKfycbyol1ISh_axaR1qhegZHTpBAb__qy9W29YsQPpB4daweArhAwVjuoDsT8nAbw9BcWM3jg/exec";
-        const form = document.forms['login-form'];
-        
-        function doPost(e) {
-            var sheet = SpreadsheetApp.openById('AKfycbwcOku1c42WL2qxdH-EZrvs7D9veQfnJuLavpyJS7_SJemGl-MMQndtpllJyiVhWi8itA').getActiveSheet();
-          
-            // Get the data from the form
-            var classData = e.parameter.class;
-            var sectionData = e.parameter.section;
-          
-            // Append the data to the Google Sheet
-            sheet.appendRow([classData, sectionData]);
-          
-            // Return a success message
-            return ContentService.createTextOutput('Data added to the Google Sheet.');
-        }
-        
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-        
-            // Get the class and section data from the form
-            const classData = form.elements['class'].value;
-            const sectionData = form.elements['section'].value;
-        
-            // Create a FormData object to send all form data
-            const formData = new FormData(form);
-            formData.append('class', classData); // Add class data
-            formData.append('section', sectionData); // Add section data
-        
-            // Redirect based on class and section
-            switch (classData) {
+function doPost(e) {
+  //var sheet = SpreadsheetApp.openById('AKfycby9T7PptxemOkWYIQzwjifsx3lQ7ur0-AD8V-tp7AUHvSOsncIt9fFxTXs0c30qQUYUew').getActiveSheet();
+
+  
+  // Get the data from the form
+  var classData = e.parameter.class;
+  var sectionData = e.parameter.section;
+  var usernameData = e.parameter.username;
+  var schoolData = e.parameter.school;
+  var emailData = e.parameter.email;
+  var scnoData = e.parameter.scno;
+  
+  e.preventDefault();
+
+  // Redirect based on class and section
+  switch (classData) {
                 case '9th':
                     if (sectionData === 'A') {
-                        window.location.href = 'c9sA.html'; // Redirect to page 1
+                        window.location.replace('c9sA.html'); // Redirect to page 1
                     }
                     break;
                 case '9th':
@@ -218,13 +224,7 @@
                 default:
                     // Handle other cases or show an error message
                     alert('Invalid selection');
-            }
-        
-            // Send the form data to Google Sheets
-            fetch(scriptURL, { method: 'POST', body: formData })
-                .then(response => alert('Success!', response))
-                .catch(error => alert('Error!', error.message));
-        });
+                }}
     </script>
 </body>
 </html>
