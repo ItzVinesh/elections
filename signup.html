@@ -92,7 +92,7 @@
         <div class="login-header">
             <h2>Login</h2>
         </div>
-        <form action="https://script.google.com/macros/s/AKfycby9T7PptxemOkWYIQzwjifsx3lQ7ur0-AD8V-tp7AUHvSOsncIt9fFxTXs0c30qQUYUew/exec" method="post">
+        <form id="login-form">
             <div class="form-group">
                 <label for="username">Name</label>
                 <input type="text" id="username" name="username" required>
@@ -137,94 +137,121 @@
         </form>
     </div>
     <script>
-function doPost(e) {
-  //var sheet = SpreadsheetApp.openById('AKfycby9T7PptxemOkWYIQzwjifsx3lQ7ur0-AD8V-tp7AUHvSOsncIt9fFxTXs0c30qQUYUew').getActiveSheet();
-
-  
   // Get the data from the form
-  var classData = e.parameter.class;
+  
+  const scriptURL = "https://script.google.com/macros/s/AKfycbyol1ISh_axaR1qhegZHTpBAb__qy9W29YsQPpB4daweArhAwVjuoDsT8nAbw9BcWM3jg/exec";
+const form = document.forms['login-form'];
+
+function doPost(e) {
+    var sheet = SpreadsheetApp.openById('AKfycbwcOku1c42WL2qxdH-EZrvs7D9veQfnJuLavpyJS7_SJemGl-MMQndtpllJyiVhWi8itA').getActiveSheet();
+  
+    // Get the data from the form
+    var classData = e.parameter.class;
   var sectionData = e.parameter.section;
   var usernameData = e.parameter.username;
   var schoolData = e.parameter.school;
   var emailData = e.parameter.email;
   var scnoData = e.parameter.scno;
+    // Append the data to the Google Sheet
+    sheet.appendRow([classData, sectionData]);
   
-  e.preventDefault();
+    // Return a success message
+    return ContentService.createTextOutput('Data added to the Google Sheet.');
+}
 
-  // Redirect based on class and section
-  switch (classData) {
-                case '9th':
-                    if (sectionData === 'A') {
-                        window.location.replace('c9sA.html'); // Redirect to page 1
-                    }
-                    break;
-                case '9th':
-                    if (sectionData === 'B') {
-                        window.location.href = 'c9sB.html'; // Redirect to page 2
-                    }
-                    break;
-                case '9th':
-                    if (sectionData === 'C') {
-                        window.location.href = 'c9sC.html'; // Redirect to page 3
-                    }
-                    break;
-                case '9th':
-                    if (sectionData === 'D') {
-                        window.location.href = 'c10sD.html'; // Redirect to page 4
-                    }
-                case '10th':
-                    if (sectionData === 'A') {
-                        window.location.href = 'c10sA.html'; // Redirect to page 4
-                    }
-                case '10th':
-                    if (sectionData === 'B') {
-                        window.location.href = 'c10sB.html'; // Redirect to page 4
-                    }
-                case '10th':
-                    if (sectionData === 'C') {
-                        window.location.href = 'c10sC.html'; // Redirect to page 4
-                    }
-                case '10th':
-                    if (sectionData === 'D') {
-                        window.location.href = 'c11sD.html'; // Redirect to page 4
-                    }
-                case '11th':
-                    if (sectionData === 'A') {
-                        window.location.href = 'c11sA.html'; // Redirect to page 4
-                    }
-                case '11th':
-                    if (sectionData === 'B') {
-                        window.location.href = 'c11sB.html'; // Redirect to page 4
-                    }
-                case '11th':
-                    if (sectionData === 'C') {
-                        window.location.href = 'c11sC.html'; // Redirect to page 4
-                    }
-                case '11th':
-                    if (sectionData === 'D') {
-                        window.location.href = 'c11sD.html'; // Redirect to page 4
-                    }
-                    case '12th':
-                    if (sectionData === 'A') {
-                        window.location.href = 'c12sA.html'; // Redirect to page 4
-                    }
-                case '12th':
-                    if (sectionData === 'B') {
-                        window.location.href = 'c12sB.html'; // Redirect to page 4
-                    }
-                case '12th':
-                    if (sectionData === 'C') {
-                        window.location.href = 'c12sC.html'; // Redirect to page 4
-                    }
-                case '12th':
-                    if (sectionData === 'D') {
-                        window.location.href = 'c12sD.html'; // Redirect to page 4
-                    }
-                    break;
-                default:
-                    // Handle other cases or show an error message
-                    alert('Invalid selection');
-                }}
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    // Get the class and section data from the form
+    const classData = form.elements['class'].value;
+    const sectionData = form.elements['section'].value;
+
+    // Create a FormData object to send all form data
+    const formData = new FormData(form);
+    formData.append('class', classData); // Add class data
+    formData.append('section', sectionData); // Add section data
+
+    // Redirect based on class and section
+    switch (classData) {
+        case '9th':
+            if (sectionData === 'A') {
+                window.location.href = 'c9sA.html'; // Redirect to page 1
+            }
+            break;
+        case '9th':
+            if (sectionData === 'B') {
+                window.location.href = 'c9sB.html'; // Redirect to page 2
+            }
+            break;
+        case '9th':
+            if (sectionData === 'C') {
+                window.location.href = 'c9sC.html'; // Redirect to page 3
+            }
+            break;
+        case '9th':
+            if (sectionData === 'D') {
+                window.location.href = 'c10sD.html'; // Redirect to page 4
+            }
+        case '10th':
+            if (sectionData === 'A') {
+                window.location.href = 'c10sA.html'; // Redirect to page 4
+            }
+        case '10th':
+            if (sectionData === 'B') {
+                window.location.href = 'c10sB.html'; // Redirect to page 4
+            }
+        case '10th':
+            if (sectionData === 'C') {
+                window.location.href = 'c10sC.html'; // Redirect to page 4
+            }
+        case '10th':
+            if (sectionData === 'D') {
+                window.location.href = 'c11sD.html'; // Redirect to page 4
+            }
+        case '11th':
+            if (sectionData === 'A') {
+                window.location.href = 'c11sA.html'; // Redirect to page 4
+            }
+        case '11th':
+            if (sectionData === 'B') {
+                window.location.href = 'c11sB.html'; // Redirect to page 4
+            }
+        case '11th':
+            if (sectionData === 'C') {
+                window.location.href = 'c11sC.html'; // Redirect to page 4
+            }
+        case '11th':
+            if (sectionData === 'D') {
+                window.location.href = 'c11sD.html'; // Redirect to page 4
+            }
+            case '12th':
+            if (sectionData === 'A') {
+                window.location.href = 'c12sA.html'; // Redirect to page 4
+            }
+        case '12th':
+            if (sectionData === 'B') {
+                window.location.href = 'c12sB.html'; // Redirect to page 4
+            }
+        case '12th':
+            if (sectionData === 'C') {
+                window.location.href = 'c12sC.html'; // Redirect to page 4
+            }
+        case '12th':
+            if (sectionData === 'D') {
+                window.location.href = 'c12sD.html'; // Redirect to page 4
+            }
+            break;
+        default:
+            // Handle other cases or show an error message
+            alert('Invalid selection');
+    }
+
+    // Send the form data to Google Sheets
+    fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => alert('Success!', response))
+        .catch(error => alert('Error!', error.message));
+});
+
     </script>
 </body>
 </html>
