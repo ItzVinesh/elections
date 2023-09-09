@@ -1,187 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" href="logo.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-image: url(background.jpg);
-            background-size: cover;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .login-container {
-            width: 400px;
-            background: rgba(255, 255, 255, 0.377);
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .login-header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .login-header h2 {
-            font-size: 24px;
-            margin: 0;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        .form-group input[type="text"],
-        .form-group input[type="number"],
-        .form-group input[type="email"],
-        .form-group input[type="password"] {
-            width: 93%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-
-        .form-group input[type="submit"] {
-            background-color: transparent;
-            color: black;
-            border: 1px black;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 3px;
-            font-size: 17px;
-        }
-
-        .form-group input[type="submit"]:hover {
-            background-color: #0056b3;
-            color: white;
-        }
-    /* Style the dropdown container */
-    .form-group select {
-        width: 100%;
-        padding: 10px;
-        border-radius: 3px;
-        appearance: none; /* Remove default arrow */
-        background-size: 16px; /* Set arrow size */
-        cursor: pointer;
-    }
-
-    /* Style the dropdown options */
-    .form-group select option {
-        background-color: #fff;
-        color: #000;
-    }    </style>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style2.css">
+    <title>Voting Page</title>
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-header">
-            <h2>Login</h2>
-        </div>
-        <form id="signup-form" action="https://script.google.com/macros/s/AKfycby9T7PptxemOkWYIQzwjifsx3lQ7ur0-AD8V-tp7AUHvSOsncIt9fFxTXs0c30qQUYUew/exec" method="POST">
-            <div class="form-group">
-                <label for="username">Name</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="username">School</label>
-                <input type="text" id="school" name="school" required>
-            </div>
-            <div class="form-group">
-                <label for="username">Scholar Number</label>
-                <input type="number" id="scno" name="scno" required>
-            </div>
-            <div class="form-group">
-                <label for="username">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="class">Class:</label>
-                <select name="class" required>
-                    <option value="9th" selected>9th</option>
-                    <option value="11th">11th</option>
-                    <option value="10th">10th</option>
-                    <option value="12th">12th</option>
-                </select><br>
-                
-            </div>
-            <div class="form-group">
-                
-                <label for="section">Section:</label>
-                <select name="section" required>
-                    <option value="A" selected>A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                </select><br>
-            </div>
-            <div class="form-group">
-                <center>
-                    <input type="submit" value="Login">
-                </center>
-            </div>
-        </form>
-    </div>
-    <script>
-        document.getElementById("signup-form").addEventListener("submit", function (e) {
-            e.preventDefault();
+<div class="box" id="top">
+    <h1>Medi-Caps International School</h1>
+</div>
+<center>
+    <h1>Teacher Rating</h1>
+</center>
+<form id="login-form" name="login-form">
+    <div id="votingContainer">
+        <div id="optionsContainer">
+            <div class="box-wrapper">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="box" id="box1">
+                    <h3 class="heading-wrapper">
 
-            // Submit the form data to the server
-            var form = this;
-            var formData = new FormData(form);
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", form.action, true);
-            xhr.onload = function () {
-                if (xhr.status === 200) {
-                    // Form submission successful, check the response
-                    var response = xhr.responseText;
-                    if (response === "success") {
-                        // Redirect based on class and section
-                        var classData = formData.get("class");
-                        var sectionData = formData.get("section");
-                        switch (classData) {
-                            case '9th':
-                                switch (sectionData) {
-                                    case 'A':
-                                        window.location.replace('c9sA.html');
-                                        break;
-                                    case 'B':
-                                        window.location.replace('c9sB.html');
-                                        break;
-                                    case 'C':
-                                        window.location.replace('c9sC.html');
-                                        break;
-                                    case 'D':
-                                        window.location.replace('c10sD.html');
-                                        break;
-                                }
-                                break;
-                            // Handle other class cases
-                            default:
-                                alert('Invalid selection');
-                        }
-                    } else {
-                        alert('Form submission failed. Please try again.');
-                    }
-                } else {
-                    alert('Form submission failed. Please try again.');
-                }
-            };
-            xhr.send(formData);
+                        <!-- First Box -->
+                        <span class="text1">XYZ</span>
+                    </h3>
+                    <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; </span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Working <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
+                    <div class="textbox-container ">                        <div class="word-count">0 / 100</div>
+                        <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="500" required></textarea>
+                    </div>
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                <!-- Second Box -->
+                <div class="box" id="box2">
+                    <h3 class="heading-wrapper">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text2">ABC</span>
+                    </h3>
+                    <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Working <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
+                    <div class="textbox-container">
+                        <div class="word-count">0 / 100</div>
+                        <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="500" required></textarea>
+                    </div>
+                </div><br><br><br>
+
+                <!-- Third Box -->
+                <div class="box-wrapper">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="box" id="box4">
+                        <h3 class="heading-wrapper">
+                            <span class="text1">XaZ</span>
+                        </h3>
+                        <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Working <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
+                        <div class="textbox-container">
+                            <div class="word-count">0 / 100</div>
+                            <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="500" required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Fourth Box -->
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="box" id="box3">
+                        <h3 class="heading-wrapper">
+                            <span class="text1">XSZ</span>
+                        </h3>
+                        <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Working <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
+                        <div class="textbox-container">
+                            <div class="word-count">0 / 100</div>
+                            <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="500" required></textarea>
+                        </div>
+                    </div>
+                    <center><br><br>
+                        <button type="submit" onclick="submitVote()">Submit</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+</center>
+</div>
+<div class="box" id="btm1">
+    <center>
+        <h1>Developed by Vinesh Katara of X-C</h1>
+    </center>
+</div>
+<script>
+    const scriptURL = "https://script.google.com/macros/s/AKfycbx3UyH-5WQUxk5AmZCFtk1daqVGtwARlzv87o75t4l696PeU3zbsieIsFJK0F7p2d-92A/exec"
+    const form = document.forms['login-form']
+
+    form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => alert('Success!', response))
+            .catch(error => alert('Error!', error.message))
+    })
+
+    function submitVote() {
+        const selectedOptionBoy = document.querySelector('input[name="head-boy"]:checked');
+        const selectedOptionGirl = document.querySelector('input[name="head-girl"]:checked');
+
+        if (selectedOptionBoy && selectedOptionGirl) {
+            const selectedValueBoy = selectedOptionBoy.value;
+            const selectedValueGirl = selectedOptionGirl.value;
+            vote(selectedValueBoy);
+            vote(selectedValueGirl);
+            window.location.href = 'thank.html';
+        } else {
+            alert('Please select an option for both Head Boy and Head Girl.');
+        }
+    }
+
+    // JavaScript code to handle emoji button clicks
+function vote(emoji) {
+    const buttons = emoji.parentElement.querySelectorAll('.emoji-button');
+    const row = emoji.closest('.box-wrapper');
+    
+    buttons.forEach(button => button.classList.remove('clicked'));
+    emoji.classList.add('clicked');
+
+    
+    }
+
+// Function to submit the vote
+function submitVote() {
+    const totalEmojiButtons = document.querySelectorAll('.emoji-button').length;
+    const selectedEmojis = document.querySelectorAll('.emoji-button.clicked');
+
+    if (selectedEmojis.length === 12) {
+        // You can process the selected emojis here
+        window.location.href = 'thank.html';
+    } else {
+        alert('Please select an emoji for each category.');
+    }
+}
+
+
+    // Get all textarea elements with the class "word-limit-textarea"
+    const textareas = document.querySelectorAll('.word-limit-textarea');
+
+    // Add an input event listener to each textarea
+    textareas.forEach(textarea => {
+        const wordCountDisplay = textarea.previousElementSibling; // Get the word count display element
+
+        textarea.addEventListener('input', function () {
+            // Get the current text from the textarea
+            const text = this.value;
+
+            // Split the text into words (split by spaces)
+            const words = text.trim().split(/\s+/);
+
+            // Count the number of words
+            const wordCount = words.length;
+
+            // Update the word count display
+            wordCountDisplay.textContent = `${wordCount} / 1000`;
+
+            // Disable the textarea if the word limit is exceeded
+            if (wordCount > 100) {
+                textarea.value = text.split(/\s+/).slice(0, 100).join(' ');
+                wordCountDisplay.style.color = 'red';
+                textarea.style.borderColor = 'red';
+                textarea.disabled = true;
+            } else {
+                wordCountDisplay.style.color = 'gray';
+                textarea.style.borderColor = '';
+                textarea.disabled = false;
+            }
         });
-    </script>
+    });
+
+    function doPost(e) {
+  try {
+    var sheet = SpreadsheetApp.openById('YOUR_SPREADSHEET_ID').getActiveSheet();
+    var headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+    var newRow = [];
+
+    // Get form data
+    var formData = e.parameter;
+
+    // Add emoji IDs to the newRow array
+    newRow.push(formData['emoji1']); // Change 'emoji1' to the appropriate field name
+    newRow.push(formData['emoji2']); // Change 'emoji2' to the appropriate field name
+    newRow.push(formData['emoji3']); // Change 'emoji3' to the appropriate field name
+
+    // Add other form data to the newRow array
+    newRow.push(formData['field1']); // Change 'field1' to the appropriate field name
+    newRow.push(formData['field2']); // Change 'field2' to the appropriate field name
+    newRow.push(formData['field3']); // Change 'field3' to the appropriate field name
+
+    // Add timestamp
+    newRow.push(new Date());
+
+    // Append the newRow array to the sheet
+    sheet.appendRow(newRow);
+
+    // Return success message
+    return ContentService.createTextOutput('Success').setMimeType(ContentService.MimeType.TEXT);
+  } catch (error) {
+    // Handle errors
+    return ContentService.createTextOutput('Error: ' + error.toString()).setMimeType(ContentService.MimeType.TEXT);
+  }
+}
+
+</script>
+
 </body>
 </html>

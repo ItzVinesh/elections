@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel = "icon" href = "logo.png" type = "image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(background.jpg);
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .login-container {
+            width: 400px;
+            background: rgba(255, 255, 255, 0.377);
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .login-header h2 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="number"],
+        .form-group input[type="email"],
+        .form-group input[type="password"] {
+            width: 93%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: transparent;
+            color: black;
+            border: 1px black;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 3px;
+            font-size: 17px;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+    /* Style the dropdown container */
+    .form-group select {
+        width: 100%;
+        padding: 10px;
+        border-radius: 3px;
+        appearance: none; /* Remove default arrow */
+        background-size: 16px; /* Set arrow size */
+        cursor: pointer;
+    }
+
+    /* Style the dropdown options */
+    .form-group select option {
+        background-color: #fff;
+        color: #000;
+    }
+</style>
+<div class="login-container">
+    <div class="login-header">
+        <h2>Login</h2>
+    </div>
+    <form id="login-form">
+        <div class="form-group">
+            <label for="username">Name</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="form-group">
+            <label for="school">School</label>
+            <input type="text" id="school" name="school" required>
+        </div>
+        <div class="form-group">
+            <label for="scno">Scholar Number</label>
+            <input type="number" id="scno" name="scno" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="class">Class:</label>
+            <select name="class" required>
+                <option value="9th" selected>9th</option>
+                <option value="10th">10th</option>
+                <option value="11th">11th</option>
+                <option value="12th">12th</option>
+            </select><br>
+        </div>
+        <div class="form-group">
+            <label for="section">Section:</label>
+            <select name="section" required>
+                <option value="A" selected>A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+            </select><br>
+        </div>
+        <div class="form-group">
+            <center>
+                <input type="submit" value="Login">
+            </center>
+        </div>
+    </form>
+</div>
+<script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbyol1ISh_axaR1qhegZHTpBAb__qy9W29YsQPpB4daweArhAwVjuoDsT8nAbw9BcWM3jg/exec";
+const form = document.forms['login-form'];
+
+function doPost(e) {
+    var sheet = SpreadsheetApp.openById('AKfycbwcOku1c42WL2qxdH-EZrvs7D9veQfnJuLavpyJS7_SJemGl-MMQndtpllJyiVhWi8itA').getActiveSheet();
+  
+    // Get the data from the form
+    var usernameData = e.parameter.username;
+    var schoolData = e.parameter.school;
+    var scnoData = e.parameter.scno;
+    var emailData = e.parameter.email;
+    var classData = e.parameter.class;
+    var sectionData = e.parameter.section;
+  
+    // Append the data to the Google Sheet
+    sheet.appendRow([usernameData, schoolData, scnoData, emailData, classData, sectionData]);
+  
+    // Return a success message
+    return ContentService.createTextOutput('Data added to the Google Sheet.');
+}
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    // Get the class and section data from the form
+    const usernameData = form.elements['username'].value;
+    const schoolData = form.elements['school'].value;
+    const scnoData = form.elements['scno'].value;
+    const emailData = form.elements['email'];
+    const classData = form.elements['class'].value;
+    const sectionData = form.elements['section'].value;
+
+    // Create a FormData object to send all form data
+    const formData = new FormData(form);
+    formData.append('username', usernameData);
+    formData.append('school', schoolData);
+    formData.append('scno', scnoData);
+    formData.append('email', emailData);
+    formData.append('class', classData);
+    formData.append('section', sectionData); 
+
+    // Redirect based on class and section
+    switch (classData) {
+        case '9th':
+            if (sectionData === 'A') {
+                window.location.href = 'c9sA.html'; // Redirect to page 1
+            }
+            break;
+        case '9th':
+            if (sectionData === 'B') {
+                window.location.href = 'c9sB.html'; // Redirect to page 2
+            }
+            break;
+        case '9th':
+            if (sectionData === 'C') {
+                window.location.href = 'c9sC.html'; // Redirect to page 3
+            }
+            break;
+        case '9th':
+            if (sectionData === 'D') {
+                window.location.href = 'c10sD.html'; // Redirect to page 4
+            }
+        case '10th':
+            if (sectionData === 'A') {
+                window.location.href = 'c10sA.html'; // Redirect to page 4
+            }
+        case '10th':
+            if (sectionData === 'B') {
+                window.location.href = 'c10sB.html'; // Redirect to page 4
+            }
+        case '10th':
+            if (sectionData === 'C') {
+                window.location.href = 'c10sC.html'; // Redirect to page 4
+            }
+        case '10th':
+            if (sectionData === 'D') {
+                window.location.href = 'c11sD.html'; // Redirect to page 4
+            }
+        case '11th':
+            if (sectionData === 'A') {
+                window.location.href = 'c11sA.html'; // Redirect to page 4
+            }
+        case '11th':
+            if (sectionData === 'B') {
+                window.location.href = 'c11sB.html'; // Redirect to page 4
+            }
+        case '11th':
+            if (sectionData === 'C') {
+                window.location.href = 'c11sC.html'; // Redirect to page 4
+            }
+        case '11th':
+            if (sectionData === 'D') {
+                window.location.href = 'c11sD.html'; // Redirect to page 4
+            }
+            case '12th':
+            if (sectionData === 'A') {
+                window.location.href = 'c12sA.html'; // Redirect to page 4
+            }
+        case '12th':
+            if (sectionData === 'B') {
+                window.location.href = 'c12sB.html'; // Redirect to page 4
+            }
+        case '12th':
+            if (sectionData === 'C') {
+                window.location.href = 'c12sC.html'; // Redirect to page 4
+            }
+        case '12th':
+            if (sectionData === 'D') {
+                window.location.href = 'c12sD.html'; // Redirect to page 4
+            }
+            break;
+        default:
+            // Handle other cases or show an error message
+            alert('Invalid selection');
+    }
+
+    // Send the form data to Google Sheets
+    fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => alert('Success!', response))
+        .catch(error => alert('Error!', error.message));
+});
+
+</script>
+</body>
+</html>
