@@ -14,29 +14,25 @@
 <center>
     <h1>Teacher Rating</h1>
 </center>
-<form id="login-form" name="login-form" action="https://script.google.com/macros/s/AKfycbyol1ISh_axaR1qhegZHTpBAb__qy9W29YsQPpB4daweArhAwVjuoDsT8nAbw9BcWM3jg/exec" method="post"> <!-- Replace with your actual script URL -->
+<form id="login-form" name="login-form" action="https://script.google.com/macros/s/AKfycbyPsfBSclMmrXPcpw8AjeiHlyKx8SZI0bBNj-OVNzenZ-AjpvPd2Lb5D1p-fQv1tn-cQw/exec" method="post">
     <div id="votingContainer">
         <div id="optionsContainer">
             <div class="box-wrapper">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="box" id="box1">
+                <div class="box" id="box1">
                     <h3 class="heading-wrapper">
-
-                        <!-- First Box -->
                         <span class="text1">XYZ</span>
                     </h3>
-                    <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; </span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
-                    <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
-                    <h2>&nbsp;&nbsp; Working <span class="emoji-button" onclick="vote(this)" id="1">&#x1F600;</span> <span class="emoji-button" id="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" onclick="vote(this)" id="3">&#128532;</span> <span class="emoji-button" id="4" onclick="vote(this)">&#128544;</span></h2>
-                    <div class="textbox-container ">                        <div class="word-count">0 / 100</div>
-                        <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="500" name="field1" required></textarea> <!-- Use "field1" as the name for the first field -->
+                    <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" data-category="behavior" data-value="1" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" data-category="behavior" data-value="2" onclick="vote(this)">&#128578; </span><span class="emoji-button" data-category="behavior" data-value="3" onclick="vote(this)">&#128532;</span> <span class="emoji-button" data-category="behavior" data-value="4" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" data-category="teaching" data-value="1" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" data-category="teaching" data-value="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" data-category="teaching" data-value="3" onclick="vote(this)">&#128532;</span> <span class="emoji-button" data-category="teaching" data-value="4" onclick="vote(this)">&#128544;</span></h2>
+                    <h2>&nbsp;&nbsp; Working <span class="emoji-button" data-category="working" data-value="1" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" data-category="working" data-value="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" data-category="working" data-value="3" onclick="vote(this)">&#128532;</span> <span class="emoji-button" data-category="working" data-value="4" onclick="vote(this)">&#128544;</span></h2>
+                    <div class="textbox-container ">                        
+                        <div class="word-count">0 / 100</div>
+                        <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="500" name="field1" required></textarea>
                     </div>
                 </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-                
-                    <center><br><br>
-                        <button type="submit" onclick="submitVote()">Submit</button>
-                    </center>
-                </div>
+                <center><br><br>
+                    <button type="button" onclick="submitVote()">Submit</button>
+                </center>
             </div>
         </div>
     </div>
@@ -52,58 +48,46 @@
     // JavaScript code to handle emoji button clicks
     function vote(emoji) {
         const buttons = emoji.parentElement.querySelectorAll('.emoji-button');
-        const row = emoji.closest('.box-wrapper');
-        
         buttons.forEach(button => button.classList.remove('clicked'));
         emoji.classList.add('clicked');
     }
-
-    // Function to submit the vote
+    
     function submitVote() {
-        const totalEmojiButtons = document.querySelectorAll('.emoji-button').length;
-        const selectedEmojis = document.querySelectorAll('.emoji-button.clicked');
+        const behaviorEmoji = document.querySelector('.emoji-button[data-category="behavior"].clicked');
+        const teachingEmoji = document.querySelector('.emoji-button[data-category="teaching"].clicked');
+        const workingEmoji = document.querySelector('.emoji-button[data-category="working"].clicked');
+        const additionalFeedback = document.querySelector('textarea[name="field1"]').value;
 
-        if (selectedEmojis.length === 3) {
-            // You can process the selected emojis here
-            window.location.href = 'thank.html';
+        // Check if all emoji categories are selected
+        if (behaviorEmoji && teachingEmoji && workingEmoji) {
+            // Construct the data object to send
+            const formData = new FormData();
+            formData.append('behavior', behaviorEmoji.getAttribute('data-value'));
+            formData.append('teaching', teachingEmoji.getAttribute('data-value'));
+            formData.append('working', workingEmoji.getAttribute('data-value'));
+            formData.append('field1', additionalFeedback);
+
+            // Define your Google Apps Script URL
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyPsfBSclMmrXPcpw8AjeiHlyKx8SZI0bBNj-OVNzenZ-AjpvPd2Lb5D1p-fQv1tn-cQw/exec';
+
+            // Send the data to Google Apps Script
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    if (response.ok) {
+                        // Redirect to a thank you page
+                        window.location.href = 'thank.html';
+                    } else {
+                        alert('Error: Unable to submit data.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error: Unable to submit data.');
+                });
         } else {
             alert('Please select an emoji for each category.');
         }
     }
-
-    // Get all textarea elements with the class "word-limit-textarea"
-    const textareas = document.querySelectorAll('.word-limit-textarea');
-
-    // Add an input event listener to each textarea
-    textareas.forEach(textarea => {
-        const wordCountDisplay = textarea.previousElementSibling; // Get the word count display element
-
-        textarea.addEventListener('input', function () {
-            // Get the current text from the textarea
-            const text = this.value;
-
-            // Split the text into words (split by spaces)
-            const words = text.trim().split(/\s+/);
-
-            // Count the number of words
-            const wordCount = words.length;
-
-            // Update the word count display
-            wordCountDisplay.textContent = `${wordCount} / 1000`;
-
-            // Disable the textarea if the word limit is exceeded
-            if (wordCount > 100) {
-                textarea.value = text.split(/\s+/).slice(0, 100).join(' ');
-                wordCountDisplay.style.color = 'red';
-                textarea.style.borderColor = 'red';
-                textarea.disabled = true;
-            } else {
-                wordCountDisplay.style.color = 'gray';
-                textarea.style.borderColor = '';
-                textarea.disabled = false;
-            }
-        });
-    });
 </script>
 </body>
 </html>
