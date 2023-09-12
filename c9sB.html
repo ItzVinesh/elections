@@ -3,80 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Google Sheets Data</title>
+    <link rel="icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style2.css">
+    <title>Voting Page</title>
     <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-        }
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
+      
     </style>
 </head>
 <body>
-    <h1>Data from Google Sheet</h1>
-    <table id="dataTable">
-        <thead>
-            <!-- Table header rows will be added here -->
-        </thead>
-        <tbody>
-            <!-- Table content rows will be added here -->
-        </tbody>
-    </table>
+    <div class="box" id="top">
+        <h1>Medi-Caps International School</h1>
+    </div>
+    <center>
+        <h1>Teacher Rating</h1>
+    </center>
+    <form id="login-form" name="login-form" action="https://script.google.com/macros/s/AKfycbw5j_3fH3bz7ZZwf9wiffBr6qYWop6ZukEUGtIDPuO_vkSHhCABgnYkkqLTZogBQBzb/exec" method="post">
+        <div id="votingContainer">
+            <div id="optionsContainer">
+                <div class="box-wrapper">
+                    <div class="box" id="box1">
+                        <h3 class="heading-wrapper">
+                            <span class="text1">XYZ</span>
+                        </h3>
+                        <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" data-category="behavior" data-value="1" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" data-category="behavior" data-value="2" onclick="vote(this)">&#128578; </span><span class="emoji-button" data-category="behavior" data-value="3" onclick="vote(this)">&#128532;</span> <span class="emoji-button" data-category="behavior" data-value="4" onclick="vote(this)">&#128544;</span></h2>
+                        <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" data-category="teaching" data-value="1" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" data-category="teaching" data-value="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" data-category="teaching" data-value="3" onclick="vote(this)">&#128532;</span> <span class="emoji-button" data-category="teaching" data-value="4" onclick="vote(this)">&#128544;</span></h2>
+                        <h2>&nbsp;&nbsp; Working <span class="emoji-button" data-category="working" data-value="1" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" data-category="working" data-value="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" data-category="working" data-value="3" onclick="vote(this)">&#128532;</span> <span class="emoji-button" data-category="working" data-value="4" onclick="vote(this)">&#128544;</span></h2>
+                        <div class="textbox-container ">                        
+                            <div class="word-count">0 / 100</div>
+                            <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="500" name="field1" required></textarea>
+                        </div>
+                    </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!-- Second Box -->
+                    <div class="box" id="box2">
+                        <h3 class="heading-wrapper">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="text2">ABC</span>
+                        </h3>
+                        <h2>&nbsp;&nbsp; Behavior <span class="emoji-button2" data-category="behavior" data-value="1" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button2" data-category="behavior" data-value="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button2" data-category="behavior" data-value="3" onclick="vote(this)">&#128532;</span> <span class="emoji-button2" data-category="behavior" data-value="4" onclick="vote(this)">&#128544;</span></h2>
+                        <h2>&nbsp;&nbsp; Teaching <span class="emoji-button2" data-category="teaching" data-value="1" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button2" data-category="teaching" data-value="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button2" data-category="teaching" data-value="3" onclick="vote(this)">&#128532;</span> <span class="emoji-button2" data-category="teaching" data-value="4" onclick="vote(this)">&#128544;</span></h2>
+                        <h2>&nbsp;&nbsp; Working <span class="emoji-button2" data-category="working" data-value="1" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button2" data-category="working" data-value="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button2" data-category="working" data-value="3" onclick="vote(this)">&#128532;</span> <span class="emoji-button2" data-category="working" data-value="4" onclick="vote(this)">&#128544;</span></h2>
+                        <div class="textbox-container">
+                            <div class="word-count">0 / 100</div>
+                            <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="500" name="field2" required></textarea>
+                        </div>
+                    </div><br><br><br>
 
+                    <!-- Third Box -->
+                    <div class="box-wrapper">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="box" id="box4">
+                            <h3 class="heading-wrapper">
+                                <span class="text1">XaZ</span>
+                            </h3>
+                            <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" data-category="behavior" data-value="1" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" data-category="behavior" data-value="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" data-category="behavior" data-value="3" onclick="vote(this)">&#128532;</span> <span class="emoji-button" data-category="behavior" data-value="4" onclick="vote(this)">&#128544;</span></h2>
+                            <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" data-category="teaching" data-value="1" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" data-category="teaching" data-value="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" data-category="teaching" data-value="3" onclick="vote(this)">&#128532;</span> <span class="emoji-button" data-category="teaching" data-value="4" onclick="vote(this)">&#128544;</span></h2>
+                            <h2>&nbsp;&nbsp; Working <span class="emoji-button" data-category="working" data-value="1" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" data-category="working" data-value="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" data-category="working" data-value="3" onclick="vote(this)">&#128532;</span> <span class="emoji-button" data-category="working" data-value="4" onclick="vote(this)">&#128544;</span></h2>
+                            <div class="textbox-container">
+                                <div class="word-count">0 / 100</div>
+                                <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="500" name="field3" required></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Fourth Box -->
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<div class="box" id="box3">
+                            <h3 class="heading-wrapper">
+                                <span class="text1">XSZ</span>
+                            </h3>
+                            <h2>&nbsp;&nbsp; Behavior <span class="emoji-button" data-category="behavior" data-value="1" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" data-category="behavior" data-value="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" data-category="behavior" data-value="3" onclick="vote(this)">&#128532;</span> <span class="emoji-button" data-category="behavior" data-value="4" onclick="vote(this)">&#128544;</span></h2>
+                            <h2>&nbsp;&nbsp; Teaching <span class="emoji-button" data-category="teaching" data-value="1" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" data-category="teaching" data-value="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" data-category="teaching" data-value="3" onclick="vote(this)">&#128532;</span> <span class="emoji-button" data-category="teaching" data-value="4" onclick="vote(this)">&#128544;</span></h2>
+                            <h2>&nbsp;&nbsp; Working <span class="emoji-button" data-category="working" data-value="1" onclick="vote(this)">&#x1F600;</span> <span class="emoji-button" data-category="working" data-value="2" onclick="vote(this)">&#128578; &nbsp;</span><span class="emoji-button" data-category="working" data-value="3" onclick="vote(this)">&#128532;</span> <span class="emoji-button" data-category="working" data-value="4" onclick="vote(this)">&#128544;</span></h2>
+                            <div class="textbox-container">
+                                <div class="word-count">0 / 100</div>
+                                <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="500" name="field4" required></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <center><br><br>
+                        <button type="button" onclick="submitVote()">Submit</button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </form>
+    </center>
+    </div>
+    <div class="box" id="btm1">
+        <center>
+            <h1>Developed by Vinesh Katara of X-C</h1>
+        </center>
+    </div>
     <script>
-        // Replace 'YOUR_API_KEY' with your Google Cloud API key
-        const apiKey = 'AIzaSyCmXgRHudSZo-nE_ZY0ehyST9TYGVsSeeE';
+        // JavaScript code to handle emoji button clicks
+        function vote(emoji) {
+            const buttons = emoji.parentElement.querySelectorAll('.emoji-button');
+            buttons.forEach(button => button.classList.remove('clicked'));
+            emoji.classList.add('clicked');
+        }
+        
+        function submitVote() {
+            const formData = new FormData();
+            
+            for (let i = 1; i <= 4; i++) {
+                const behaviorEmoji = document.querySelector(`.emoji-button[data-category="behavior"][data-value="${i}"].clicked`);
+                const teachingEmoji = document.querySelector(`.emoji-button[data-category="teaching"][data-value="${i}"].clicked`);
+                const workingEmoji = document.querySelector(`.emoji-button[data-category="working"][data-value="${i}"].clicked`);
+                const additionalFeedback = document.querySelector(`textarea[name="field${i}"]`).value;
 
-        // Replace 'YOUR_SPREADSHEET_ID' with your Google Sheet ID
-        const spreadsheetId = 'AKfycbz_wtIuxovVnuiffvcOiv0SCE7ILZdkpnEFE_KJucXa8_pvfKnHMWjhMjr2wnvS9oZe';
+                if (!behaviorEmoji || !teachingEmoji || !workingEmoji) {
+                    alert('Please select an emoji for each category in all boxes.');
+                    return;
+                }
 
-        // Replace 'SHEET_NAME' with the name of your sheet (usually 'Sheet1')
-        const sheetName = 'Sheet1';
+                formData.append(`behavior${i}`, behaviorEmoji.getAttribute('data-value'));
+                formData.append(`teaching${i}`, teachingEmoji.getAttribute('data-value'));
+                formData.append(`working${i}`, workingEmoji.getAttribute('data-value'));
+                formData.append(`field${i}`, additionalFeedback);
+            }
 
-        // Create the URL to fetch data from Google Sheets API
-        const apiUrl = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${sheetName}?key=${apiKey}`;
+            // Define your Google Apps Script URL
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbw5j_3fH3bz7ZZwf9wiffBr6qYWop6ZukEUGtIDPuO_vkSHhCABgnYkkqLTZogBQBzb/exec';
 
-        // Fetch data from Google Sheets API
-        fetch(apiUrl)
-            .then(response => response.json())
-            .then(data => {
-                const table = document.getElementById('dataTable');
-                const [headerRow, ...rows] = data.values;
-
-                // Create table header row
-                const thead = document.createElement('thead');
-                const headerRowElement = document.createElement('tr');
-                headerRow.forEach(header => {
-                    const th = document.createElement('th');
-                    th.textContent = header;
-                    headerRowElement.appendChild(th);
+            // Send the data to Google Apps Script
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    if (response.ok) {
+                        // Redirect to a thank you page
+                        window.location.href = 'thank.html';
+                    } else {
+                        alert('Error: Unable to submit data.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Error: Unable to submit data.');
                 });
-                thead.appendChild(headerRowElement);
-                table.appendChild(thead);
-
-                // Create table content rows
-                const tbody = document.createElement('tbody');
-                rows.forEach(rowData => {
-                    const rowElement = document.createElement('tr');
-                    rowData.forEach(cellData => {
-                        const cell = document.createElement('td');
-                        cell.textContent = cellData;
-                        rowElement.appendChild(cell);
-                    });
-                    tbody.appendChild(rowElement);
-                });
-                table.appendChild(tbody);
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
+        }
     </script>
 </body>
 </html>

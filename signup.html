@@ -176,80 +176,48 @@ form.addEventListener('submit', e => {
     formData.append('class', classData);
     formData.append('section', sectionData); 
 
-    // Redirect based on class and section
     switch (classData) {
-        case '9th':
-            if (sectionData === 'A') {
+    case '9th':
+        switch (sectionData) {
+            case 'A':
                 window.location.href = 'c9sA.html'; // Redirect to page 1
-            }
-            break;
-        case '9th':
-            if (sectionData === 'B') {
+                break;
+            case 'B':
                 window.location.href = 'c9sB.html'; // Redirect to page 2
-            }
-            break;
-        case '9th':
-            if (sectionData === 'C') {
+                break;
+            case 'C':
                 window.location.href = 'c9sC.html'; // Redirect to page 3
-            }
-            break;
-        case '9th':
-            if (sectionData === 'D') {
-                window.location.href = 'c10sD.html'; // Redirect to page 4
-            }
-        case '10th':
-            if (sectionData === 'A') {
-                window.location.href = 'c10sA.html'; // Redirect to page 4
-            }
-        case '10th':
-            if (sectionData === 'B') {
-                window.location.href = 'c10sB.html'; // Redirect to page 4
-            }
-        case '10th':
-            if (sectionData === 'C') {
-                window.location.href = 'c10sC.html'; // Redirect to page 4
-            }
-        case '10th':
-            if (sectionData === 'D') {
-                window.location.href = 'c11sD.html'; // Redirect to page 4
-            }
-        case '11th':
-            if (sectionData === 'A') {
-                window.location.href = 'c11sA.html'; // Redirect to page 4
-            }
-        case '11th':
-            if (sectionData === 'B') {
-                window.location.href = 'c11sB.html'; // Redirect to page 4
-            }
-        case '11th':
-            if (sectionData === 'C') {
-                window.location.href = 'c11sC.html'; // Redirect to page 4
-            }
-        case '11th':
-            if (sectionData === 'D') {
-                window.location.href = 'c11sD.html'; // Redirect to page 4
-            }
-            case '12th':
-            if (sectionData === 'A') {
-                window.location.href = 'c12sA.html'; // Redirect to page 4
-            }
-        case '12th':
-            if (sectionData === 'B') {
-                window.location.href = 'c12sB.html'; // Redirect to page 4
-            }
-        case '12th':
-            if (sectionData === 'C') {
-                window.location.href = 'c12sC.html'; // Redirect to page 4
-            }
-        case '12th':
-            if (sectionData === 'D') {
-                window.location.href = 'c12sD.html'; // Redirect to page 4
-            }
-            break;
-        default:
-            // Handle other cases or show an error message
-            alert('Invalid selection');
-    }
+                break;
+            case 'D':
+                window.location.href = 'c9sD.html'; // Redirect to page 4
+                break;
+            default:
+                alert('Invalid section selection');
+        }
+        break;
+    case '10th':
+        switch (sectionData) {
+            case 'A':
+                window.location.href = 'c10sA.html'; // Redirect to page 5
+                break;
+            case 'B':
+                window.location.href = 'c10sB.html'; // Redirect to page 6
+                break;
+            case 'C':
+                window.location.href = 'c10sC.html'; // Redirect to page 7
+                break;
+            case 'D':
+                window.location.href = 'c10sD.html'; // Redirect to page 8
+                break;
+            default:
+                alert('Invalid section selection');
+        }
+        break;
+    // Repeat the same structure for other class options
+    default:
+        // Handle other cases or show an error message
+        alert('Invalid class selection');
+}
 
     // Send the form data to Google Sheets
     fetch(scriptURL, { method: 'POST', body: formData })
