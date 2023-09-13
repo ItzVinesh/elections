@@ -3,190 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rating Page</title>
+    <title>Rate Your Teacher</title>
     <link rel="icon" href="logo.png" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url(background.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-position: center;
-            background-attachment: fixed;
+            background-color: #f0f0f0; /* Light gray background */
+            text-align: center;
+            padding: 20px;
         }
 
-        .inline {
-            display: flex;
-            align-items: center;
+        .login-container {
+            background-color: #ffffff; /* White container background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
-            margin-right: 10px;
-            font-size: 40px;
+            font-size: 36px;
+            color: #333; /* Dark gray text */
         }
 
-        select {
-            width: 80px;
-            padding: 10px;
-            border: none;
-            font-size: 30px;
-            background: transparent;
-        }
-
-        select:focus {
-            outline: none; /* Remove the outline when the select element is focused */
-        }
-
-        label {
-            font-size: 30px;
-        }
-
-        input[type='submit'] {
-            font-size: 40px;
-            font-family: Georgia, serif;
-            height: 100px;
-            width: 300px;
-            border-radius: 10px;
-            border: 2px solid black;
-            background-color: transparent;
-        }
-
-        input[type='submit']:hover {
-            cursor: pointer;
-            border: 4px solid black;
-            font-size: 50px;
-        }
-
-        .word-count {
-            font-size: 20px;
-            color: gray;
-        }
-
-        textarea {
-            padding: 10px;
-            font-size: 20px;
-            background: transparent;
-            border: 2px solid black;
-            resize: none;
-        }
-
-        textarea:disabled {
-            background: lightgray;
-        }
-
-        /* Add CSS for arranging teachers horizontally */
         .teacher-row {
             display: flex;
-            align-items: center;
+            justify-content: space-between;
+            margin: 20px 0;
         }
 
         .teacher-group {
-            margin-right: 20px;
+            flex: 1;
+            padding: 10px;
+            background-color: #f8f8f8; /* Light gray input background */
+            border: 1px solid #ddd; /* Light gray border */
+            border-radius: 5px;
+        }
+
+        label {
+            font-size: 18px;
+            color: #333;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 18px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .word-count {
+            font-size: 14px;
+            color: #666; /* Gray word count text */
+            text-align: right;
+        }
+
+        input[type='submit'] {
+            font-size: 24px;
+            font-family: Georgia, serif;
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff; /* Blue button background */
+            color: #fff; /* White button text */
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type='submit']:hover {
+            background-color: #0056b3; /* Darker blue on hover */
         }
     </style>
 </head>
 <body>
-    <center>
-        <div class="login-container">
-            <div class="login-header">
-                <h1>Rate your teacher</h1>
+    <div class="container">
+        <h1>Rate Your Teacher</h1>
+        <form id="login-form">
+            <div class="teacher-group">
+                <label for="teacher1">Teacher 1:</label>
+                <select name="class" required>
+                    <option value="4" selected>&#x1F600; Excellent</option>
+                    <option value="3">&#128578; Good</option>
+                    <option value="2">&#128532; Average</option>
+                    <option value="1">&#128544; Poor</option>
+                </select>
+                <div class="textbox-container">
+                    <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="100" name="field1" required></textarea>
+                    <div class="word-count">0 / 100</div>
+                </div>
             </div>
-            <form id="login-form">
-                <div class="teacher-row">
-                    <div class="teacher-group">
-                        <label for="class">Teacher 1:</label>
-                        <select name="class" required>
-                            <option value="4" selected>&#x1F600;</option>
-                            <option value="3">&#128578;</option>
-                            <option value="2">&#128532;</option>
-                            <option value="1">&#128544;</option>
-                        </select>
-                        <div class="textbox-container ">                        
-                            <div class="word-count">0 / 100</div>
-                            <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="100" name="field1" required></textarea>
-                        </div>
-                    </div>
-                    <div class="teacher-group">
-                        <label for="section">Teacher 2:</label>
-                        <select name="section" required>
-                            <option value="4" selected>&#x1F600;</option>
-                            <option value="3">&#128578;</option>
-                            <option value="2">&#128532;</option>
-                            <option value="1">&#128544;</option>
-                        </select>
-                        <div class="textbox-container ">                        
-                            <div class="word-count">0 / 100</div>
-                            <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="100" name="field2" required></textarea>
-                        </div>
-                    </div>
+            <div class="teacher-group">
+                <label for="teacher2">Teacher 2:</label>
+                <select name="section" required>
+                    <option value="4" selected>&#x1F600; Excellent</option>
+                    <option value="3">&#128578; Good</option>
+                    <option value="2">&#128532; Average</option>
+                    <option value="1">&#128544; Poor</option>
+                </select>
+                <div class="textbox-container">
+                    <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="100" name="field2" required></textarea>
+                    <div class="word-count">0 / 100</div>
                 </div>
-                <br>
-                <div class="teacher-row">
-                    <div class="teacher-group">
-                        <label for="class2">Teacher 3:</label>
-                        <select name="class2" required>
-                            <option value="4" selected>&#x1F600;</option>
-                            <option value="3">&#128578;</option>
-                            <option value="2">&#128532;</option>
-                            <option value="1">&#128544;</option>
-                        </select>
-                        <div class="textbox-container ">                        
-                            <div class="word-count">0 / 100</div>
-                            <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="100" name="field3" required></textarea>
-                        </div>
-                    </div>
-                    <div class="teacher-group">
-                        <label for="section2">Teacher 4:</label>
-                        <select name="section2" required>
-                            <option value="4" selected>&#x1F600;</option>
-                            <option value="3">&#128578;</option>
-                            <option value="2">&#128532;</option>
-                            <option value="1">&#128544;</option>
-                        </select>
-                        <div class="textbox-container ">                        
-                            <div class="word-count">0 / 100</div>
-                            <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="100" name="field4" required></textarea>
-                        </div>
-                    </div>
+            </div>
+            <div class="teacher-group">
+                <label for="teacher3">Teacher 3:</label>
+                <select name="class2" required>
+                    <option value="4" selected>&#x1F600; Excellent</option>
+                    <option value="3">&#128578; Good</option>
+                    <option value="2">&#128532; Average</option>
+                    <option value="1">&#128544; Poor</option>
+                </select>
+                <div class="textbox-container">
+                    <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="100" name="field3" required></textarea>
+                    <div class="word-count">0 / 100</div>
                 </div>
-                <br>
-                <div class="form-group">
-                    <center>
-                        <input type="submit" value="Login">
-                    </center>
+            </div>
+            <div class="teacher-group">
+                <label for="teacher4">Teacher 4:</label>
+                <select name="section2" required>
+                    <option value="4" selected>&#x1F600; Excellent</option>
+                    <option value="3">&#128578; Good</option>
+                    <option value="2">&#128532; Average</option>
+                    <option value="1">&#128544; Poor</option>
+                </select>
+                <div class="textbox-container">
+                    <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="100" name="field4" required></textarea>
+                    <div class="word-count">0 / 100</div>
                 </div>
-            </form>
-        </div>
-    </center>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
     <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbwZ1yIymXhogRXKxBvuWXxbaW3uiw76Wo6T2VE57xexx-wt4G9lFMLuMTcL_rg20R40zg/exec';
         const form = document.getElementById('login-form');
         
         form.addEventListener('submit', e => {
             e.preventDefault();
-    
-            // Get the class and section data from the form
-            const classData = form.elements['class'].value;
-            const sectionData = form.elements['section'].value;
-            const class2Data = form.elements['class2'].value;
-            const section2Data = form.elements['section2'].value;
-            const field1Data = form.elements['field1'].value;
-            const field2Data = form.elements['field2'].value;
-            const field3Data = form.elements['field3'].value;
-            const field4Data = form.elements['field4'].value;
-    
+        
+            // Get the teacher and field data from the form
+            const teacherData1 = form.elements['field1'].value;
+            const teacherData2 = form.elements['field2'].value;
+            const teacherData3 = form.elements['field3'].value;
+            const teacherData4 = form.elements['field4'].value;
+            const field1Data = form.elements['class'].value;
+            const field2Data = form.elements['section'].value;
+            const field3Data = form.elements['class2'].value;
+            const field4Data = form.elements['section2'].value;
+        
             // Create a FormData object to send all form data
             const formData = new FormData();
             
-            formData.append('class', classData);
-            formData.append('section', sectionData); 
-            formData.append('class2', class2Data);
-            formData.append('section2', section2Data); 
-            formData.append('field1', field1Data);
-            formData.append('field2', field2Data);
-            formData.append('field3', field3Data);
-            formData.append('field4', field4Data);
-    
+            formData.append('field1', teacherData1);
+            formData.append('field2', teacherData2); 
+            formData.append('field3', teacherData3);
+            formData.append('field4', teacherData4); 
+            formData.append('class', field1Data);
+            formData.append('section', field2Data);
+            formData.append('class2', field3Data);
+            formData.append('section2', field4Data);
+        
             // Send the form data to Google Sheets
             fetch(scriptURL, { method: 'POST', body: formData })
                 .then(response => {
@@ -203,30 +192,30 @@
                     alert('An error occurred while submitting data.');
                 });
         });
-    
+        
         // Get all textarea elements with the class "word-limit-textarea"
         const textareas = document.querySelectorAll('.word-limit-textarea');
-    
+        
         // Function to count words in a text string
         function countWords(text) {
             const words = text.split(/\s+/);
             return words.filter(word => word !== '').length;
         }
-    
+        
         // Add an input event listener to each textarea
         textareas.forEach(textarea => {
-            const wordCountDisplay = textarea.parentElement.querySelector('.word-count'); // Get the word count display element
-    
+            const wordCountDisplay = textarea.nextElementSibling.querySelector('.word-count'); // Get the word count display element
+        
             textarea.addEventListener('input', function () {
                 // Get the current text from the textarea
                 const text = this.value;
-    
+        
                 // Count the number of words
                 const wordCount = countWords(text);
-    
+        
                 // Update the word count display
                 wordCountDisplay.textContent = `${wordCount} / 100`;
-    
+        
                 // Disable the textarea if the word limit is exceeded
                 if (wordCount > 100) {
                     textarea.value = text.split(/\s+/).slice(0, 100).join(' ');
@@ -234,7 +223,7 @@
                     textarea.style.borderColor = 'red';
                     textarea.disabled = true;
                 } else {
-                    wordCountDisplay.style.color = 'gray';
+                    wordCountDisplay.style.color = 'black';
                     textarea.style.borderColor = '';
                     textarea.disabled = false;
                 }
