@@ -217,12 +217,9 @@ form.addEventListener('submit', e => {
     default:
         // Handle other cases or show an error message
         alert('Invalid class selection');
-}
+} 
 
     // Send the form data to Google Sheets
-    fetch(scriptURL, { method: 'POST', body: formData })
-        .then(response => alert('Success!', response))
-        .catch(error => alert('Error!', error.message));
 });
 
 </script>
