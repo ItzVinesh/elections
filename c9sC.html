@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Page</title>
+    <title>Rating Page</title>
     <link rel="icon" href="logo.png" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            background-image: url(background.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .inline {
@@ -16,113 +20,211 @@
             align-items: center;
         }
 
-        h2 {
+        h1 {
             margin-right: 10px;
+            font-size: 40px;
         }
 
         select {
-            width: 200px; /* Adjust the width as needed */
+            width: 80px;
             padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
+            border: none;
+            font-size: 30px;
+            background: transparent;
+        }
+
+        select:focus {
+            outline: none; /* Remove the outline when the select element is focused */
+        }
+
+        label {
+            font-size: 30px;
+        }
+
+        input[type='submit'] {
+            font-size: 40px;
+            font-family: Georgia, serif;
+            height: 100px;
+            width: 300px;
+            border-radius: 10px;
+            border: 2px solid black;
+            background-color: transparent;
+        }
+
+        input[type='submit']:hover {
+            cursor: pointer;
+            border: 4px solid black;
+            font-size: 50px;
+        }
+
+        .word-count {
+            font-size: 20px;
+            color: gray;
+        }
+
+        textarea {
+            padding: 10px;
+            font-size: 20px;
+            background: transparent;
+            border: 2px solid black;
+            resize: none;
+        }
+
+        textarea:disabled {
+            background: lightgray;
         }
     </style>
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-header">
-            <h2>Login</h2>
+    <center>
+        <div class="login-container">
+            <div class="login-header">
+                <h1>Rate your teacher</h1>
+            </div>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="class">Teacher 1:</label>
+                    <select name="class" required>
+                        <option value="4" selected>&#x1F600;</option>
+                        <option value="3">&#128578;</option>
+                        <option value="2">&#128532;</option>
+                        <option value="1">&#128544;</option>
+                    </select>
+                    <div class="textbox-container ">                        
+                        <div class="word-count">0 / 100</div>
+                        <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="100" name="field1" required></textarea>
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="section">Teacher 2:</label>
+                    <select name="section" required>
+                        <option value="4" selected>&#x1F600;</option>
+                        <option value="3">&#128578;</option>
+                        <option value="2">&#128532;</option>
+                        <option value="1">&#128544;</option>
+                    </select>
+                    <div class="textbox-container ">                        
+                        <div class="word-count">0 / 100</div>
+                        <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="100" name="field2" required></textarea>
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="class2">Teacher 3:</label>
+                    <select name="class2" required>
+                        <option value="4" selected>&#x1F600;</option>
+                        <option value="3">&#128578;</option>
+                        <option value="2">&#128532;</option>
+                        <option value="1">&#128544;</option>
+                    </select>
+                    <div class="textbox-container ">                        
+                        <div class="word-count">0 / 100</div>
+                        <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="100" name="field3" required></textarea>
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="section2">Teacher 4:</label>
+                    <select name="section2" required>
+                        <option value="4" selected>&#x1F600;</option>
+                        <option value="3">&#128578;</option>
+                        <option value="2">&#128532;</option>
+                        <option value="1">&#128544;</option>
+                    </select>
+                    <div class="textbox-container ">                        
+                        <div class="word-count">0 / 100</div>
+                        <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="100" name="field4" required></textarea>
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <center>
+                        <input type="submit" value="Login">
+                    </center>
+                </div>
+            </form>
         </div>
-        <form id="login-form">
-            
-            <div class="form-group">
-                <label for="class">Teacher 1:</label>
-                <select name="class" required>
-                    <option value="4" selected>&#x1F600;</option>
-                    <option value="3">&#128578;</option>
-                    <option value="2">&#128532;</option>
-                    <option value="1">&#128544;</option>
-                </select><br>
-            </div>
-            <div class="form-group">
-                <label for="section">Teacher 2:</label>
-                <select name="section" required>
-                    <option value="4" selected>&#x1F600;</option>
-                    <option value="3">&#128578;</option>
-                    <option value="2">&#128532;</option>
-                    <option value="1">&#128544;</option>
-                </select><br>
-            </div>
-            <div class="form-group">
-                <label for="class2">Teacher 1:</label>
-                <select name="class2" required>
-                    <option value="4" selected>&#x1F600;</option>
-                    <option value="3">&#128578;</option>
-                    <option value="2">&#128532;</option>
-                    <option value="1">&#128544;</option>
-                </select><br>
-            </div>
-            <div class="form-group">
-                <label for="section2">Teacher 2:</label>
-                <select name="section2" required>
-                    <option value="4" selected>&#x1F600;</option>
-                    <option value="3">&#128578;</option>
-                    <option value="2">&#128532;</option>
-                    <option value="1">&#128544;</option>
-                </select><br>
-            </div>
-            <div class="form-group">
-                <center>
-                    <input type="submit" value="Login">
-                </center>
-            </div>
-        </form>
-    </div>
+    </center>
     <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwZ1yIymXhogRXKxBvuWXxbaW3uiw76Wo6T2VE57xexx-wt4G9lFMLuMTcL_rg20R40zg/exec';
-    const form = document.forms['login-form'];
-    
-    function doPost(e) {
-        var sheet = SpreadsheetApp.openById('AKfycbwZ1yIymXhogRXKxBvuWXxbaW3uiw76Wo6T2VE57xexx-wt4G9lFMLuMTcL_rg20R40zg').getActiveSheet();
-      
-        // Get the data from the form
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwZ1yIymXhogRXKxBvuWXxbaW3uiw76Wo6T2VE57xexx-wt4G9lFMLuMTcL_rg20R40zg/exec';
+        const form = document.getElementById('login-form');
         
-        var classData = e.parameter.class;
-        var sectionData = e.parameter.section;
-        var class2Data = e.parameter.class2;
-        var section2Data = e.parameter.section2;
-      
-        // Append the data to the Google Sheet
-        sheet.appendRow([usernameData, schoolData, scnoData, emailData, classData, sectionData, class2Data, section2Data]);
-      
-        // Return a success message
-        return ContentService.createTextOutput('Data added to the Google Sheet.');
-    }
+        form.addEventListener('submit', e => {
+            e.preventDefault();
     
-    form.addEventListener('submit', e => {
-        e.preventDefault();
+            // Get the class and section data from the form
+            const classData = form.elements['class'].value;
+            const sectionData = form.elements['section'].value;
+            const class2Data = form.elements['class2'].value;
+            const section2Data = form.elements['section2'].value;
+            const field1Data = form.elements['field1'].value;
+            const field2Data = form.elements['field2'].value;
+            const field3Data = form.elements['field3'].value;
+            const field4Data = form.elements['field4'].value;
     
-        // Get the class and section data from the form
-        const classData = form.elements['class'].value;
-        const sectionData = form.elements['section'].value;
-        const class2Data = form.elements['class2'].value;
-        const section2Data = form.elements['section2'].value;
-
-        // Create a FormData object to send all form data
-        const formData = new FormData(form);
-        
-        formData.append('class', classData);
-        formData.append('section', sectionData); 
-        formData.append('class2', class2Data);
-        formData.append('section2', section2Data); 
-
-        // Send the form data to Google Sheets
-        fetch(scriptURL, { method: 'POST', body: formData })
-            .then(response => alert('Success!', response))
-            .catch(error => alert('Error!', error.message));
-    });
+            // Create a FormData object to send all form data
+            const formData = new FormData();
+            
+            formData.append('class', classData);
+            formData.append('section', sectionData); 
+            formData.append('class2', class2Data);
+            formData.append('section2', section2Data); 
+            formData.append('field1', field1Data);
+            formData.append('field2', field2Data);
+            formData.append('field3', field3Data);
+            formData.append('field4', field4Data);
     
+            // Send the form data to Google Sheets
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    if (response.ok) {
+                        alert('Success! Data submitted successfully.');
+                        // Clear the form after successful submission
+                        form.reset();
+                    } else {
+                        alert('Error submitting data.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while submitting data.');
+                });
+        });
+    
+        // Get all textarea elements with the class "word-limit-textarea"
+        const textareas = document.querySelectorAll('.word-limit-textarea');
+    
+        // Function to count words in a text string
+        function countWords(text) {
+            const words = text.split(/\s+/);
+            return words.filter(word => word !== '').length;
+        }
+    
+        // Add an input event listener to each textarea
+        textareas.forEach(textarea => {
+            const wordCountDisplay = textarea.parentElement.querySelector('.word-count'); // Get the word count display element
+    
+            textarea.addEventListener('input', function () {
+                // Get the current text from the textarea
+                const text = this.value;
+    
+                // Count the number of words
+                const wordCount = countWords(text);
+    
+                // Update the word count display
+                wordCountDisplay.textContent = `${wordCount} / 100`;
+    
+                // Disable the textarea if the word limit is exceeded
+                if (wordCount > 100) {
+                    textarea.value = text.split(/\s+/).slice(0, 100).join(' ');
+                    wordCountDisplay.style.color = 'red';
+                    textarea.style.borderColor = 'red';
+                    textarea.disabled = true;
+                } else {
+                    wordCountDisplay.style.color = 'gray';
+                    textarea.style.borderColor = '';
+                    textarea.disabled = false;
+                }
+            });
+        });
     </script>
-    </script>
+    
 </body>
 </html>
