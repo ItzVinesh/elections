@@ -73,6 +73,16 @@
         textarea:disabled {
             background: lightgray;
         }
+
+        /* Add CSS for arranging teachers horizontally */
+        .teacher-row {
+            display: flex;
+            align-items: center;
+        }
+
+        .teacher-group {
+            margin-right: 20px;
+        }
     </style>
 </head>
 <body>
@@ -82,58 +92,64 @@
                 <h1>Rate your teacher</h1>
             </div>
             <form id="login-form">
-                <div class="form-group">
-                    <label for="class">Teacher 1:</label>
-                    <select name="class" required>
-                        <option value="4" selected>&#x1F600;</option>
-                        <option value="3">&#128578;</option>
-                        <option value="2">&#128532;</option>
-                        <option value="1">&#128544;</option>
-                    </select>
-                    <div class="textbox-container ">                        
-                        <div class="word-count">0 / 100</div>
-                        <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="100" name="field1" required></textarea>
+                <div class="teacher-row">
+                    <div class="teacher-group">
+                        <label for="class">Teacher 1:</label>
+                        <select name="class" required>
+                            <option value="4" selected>&#x1F600;</option>
+                            <option value="3">&#128578;</option>
+                            <option value="2">&#128532;</option>
+                            <option value="1">&#128544;</option>
+                        </select>
+                        <div class="textbox-container ">                        
+                            <div class="word-count">0 / 100</div>
+                            <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="100" name="field1" required></textarea>
+                        </div>
                     </div>
-                </div><br>
-                <div class="form-group">
-                    <label for="section">Teacher 2:</label>
-                    <select name="section" required>
-                        <option value="4" selected>&#x1F600;</option>
-                        <option value="3">&#128578;</option>
-                        <option value="2">&#128532;</option>
-                        <option value="1">&#128544;</option>
-                    </select>
-                    <div class="textbox-container ">                        
-                        <div class="word-count">0 / 100</div>
-                        <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="100" name="field2" required></textarea>
+                    <div class="teacher-group">
+                        <label for="section">Teacher 2:</label>
+                        <select name="section" required>
+                            <option value="4" selected>&#x1F600;</option>
+                            <option value="3">&#128578;</option>
+                            <option value="2">&#128532;</option>
+                            <option value="1">&#128544;</option>
+                        </select>
+                        <div class="textbox-container ">                        
+                            <div class="word-count">0 / 100</div>
+                            <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="100" name="field2" required></textarea>
+                        </div>
                     </div>
-                </div><br>
-                <div class="form-group">
-                    <label for="class2">Teacher 3:</label>
-                    <select name="class2" required>
-                        <option value="4" selected>&#x1F600;</option>
-                        <option value="3">&#128578;</option>
-                        <option value="2">&#128532;</option>
-                        <option value="1">&#128544;</option>
-                    </select>
-                    <div class="textbox-container ">                        
-                        <div class="word-count">0 / 100</div>
-                        <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="100" name="field3" required></textarea>
+                </div>
+                <br>
+                <div class="teacher-row">
+                    <div class="teacher-group">
+                        <label for="class2">Teacher 3:</label>
+                        <select name="class2" required>
+                            <option value="4" selected>&#x1F600;</option>
+                            <option value="3">&#128578;</option>
+                            <option value="2">&#128532;</option>
+                            <option value="1">&#128544;</option>
+                        </select>
+                        <div class="textbox-container ">                        
+                            <div class="word-count">0 / 100</div>
+                            <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="100" name="field3" required></textarea>
+                        </div>
                     </div>
-                </div><br>
-                <div class="form-group">
-                    <label for="section2">Teacher 4:</label>
-                    <select name="section2" required>
-                        <option value="4" selected>&#x1F600;</option>
-                        <option value="3">&#128578;</option>
-                        <option value="2">&#128532;</option>
-                        <option value="1">&#128544;</option>
-                    </select>
-                    <div class="textbox-container ">                        
-                        <div class="word-count">0 / 100</div>
-                        <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="100" name="field4" required></textarea>
+                    <div class="teacher-group">
+                        <label for="section2">Teacher 4:</label>
+                        <select name="section2" required>
+                            <option value="4" selected>&#x1F600;</option>
+                            <option value="3">&#128578;</option>
+                            <option value="2">&#128532;</option>
+                            <option value="1">&#128544;</option>
+                        </select>
+                        <div class="textbox-container ">                        
+                            <div class="word-count">0 / 100</div>
+                            <textarea class="word-limit-textarea" rows="6" cols="50" maxlength="100" name="field4" required></textarea>
+                        </div>
                     </div>
-                </div><br>
+                </div>
+                <br>
                 <div class="form-group">
                     <center>
                         <input type="submit" value="Login">
@@ -225,6 +241,5 @@
             });
         });
     </script>
-    
 </body>
 </html>
