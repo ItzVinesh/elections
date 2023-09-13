@@ -180,6 +180,8 @@
             fetch(scriptURL, { method: 'POST', body: formData })
                 .then(response => {
                     if (response.ok) {
+                        window.location.href = 'thank.html';
+
                         alert('Success! Data submitted successfully.');
                         // Clear the form after successful submission
                         form.reset();
