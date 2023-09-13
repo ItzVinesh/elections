@@ -17,7 +17,7 @@
     <center>
         <h1>Teacher Rating</h1>
     </center>
-    <form id="login-form" name="login-form" action="https://script.google.com/macros/s/AKfycbw5j_3fH3bz7ZZwf9wiffBr6qYWop6ZukEUGtIDPuO_vkSHhCABgnYkkqLTZogBQBzb/exec" method="post">
+    <form id="login-form" name="login-form" action="https://script.google.com/macros/s/AKfycbz_wtIuxovVnuiffvcOiv0SCE7ILZdkpnEFE_KJucXa8_pvfKnHMWjhMjr2wnvS9oZe/exec" method="post">
         <div id="votingContainer">
             <!-- First Box -->
             <div class="box-wrapper">
@@ -79,7 +79,7 @@
             //formData1.append('field1', additionalFeedback);
 
             // Define your Google Apps Script URL for the first box
-            const scriptURL1 = 'https://script.google.com/macros/s/AKfycbw5j_3fH3bz7ZZwf9wiffBr6qYWop6ZukEUGtIDPuO_vkSHhCABgnYkkqLTZogBQBzb/exec';
+            const scriptURL1 = 'https://script.google.com/macros/s/AKfycbz_wtIuxovVnuiffvcOiv0SCE7ILZdkpnEFE_KJucXa8_pvfKnHMWjhMjr2wnvS9oZe/exec';
 
             // Send the data for the first box to Google Apps Script
             fetch(scriptURL1, { method: 'POST', body: formData1 })
@@ -102,14 +102,14 @@
             const workingEmoji2 = document.querySelector('.emoji-button2[data-category="working"].clicked');
             //const additionalFeedback2 = document.querySelector('textarea[name="field2"]').value;
 
-            const formData2 = new FormData();
-            formData2.append('behavior2', behaviorEmoji2.getAttribute('data-value'));
-            formData2.append('teaching2', teachingEmoji2.getAttribute('data-value'));
-            formData2.append('working2', workingEmoji2.getAttribute('data-value'));
-            //formData2.append('field2', additionalFeedback2);
+            const formData = new FormData();
+            formData.append('behavior', behaviorEmoji2.getAttribute('data-value'));
+            formData.append('teaching', teachingEmoji2.getAttribute('data-value'));
+            formData.append('working', workingEmoji2.getAttribute('data-value'));
+            formData.append('field', additionalFeedback2);
 
             // Define your Google Apps Script URL for the second box
-            const scriptURL2 = 'https://script.google.com/macros/s/AKfycbw5j_3fH3bz7ZZwf9wiffBr6qYWop6ZukEUGtIDPuO_vkSHhCABgnYkkqLTZogBQBzb/exec';
+            const scriptURL2 = 'https://script.google.com/macros/s/AKfycbz_wtIuxovVnuiffvcOiv0SCE7ILZdkpnEFE_KJucXa8_pvfKnHMWjhMjr2wnvS9oZe/exec';
 
             // Send the data for the second box to Google Apps Script
             fetch(scriptURL2, { method: 'POST', body: formData2 })
