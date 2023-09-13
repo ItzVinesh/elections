@@ -230,6 +230,16 @@
                 }
             });
         });
+        // Function to prevent the user from going back
+function preventBack() {
+      window.history.pushState(null, null, window.location.href);
+      window.onpopstate = function () {
+        window.history.pushState(null, null, window.location.href);
+      };
+    }
+
+    // Call the preventBack function to prevent going back
+    preventBack();
     </script>
 </body>
 </html>

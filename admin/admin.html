@@ -28,53 +28,16 @@
         </div>
     </div>
     <script>
-        // Function to check if a value exists in a column of the Google Sheet
-        function checkIfExists(columnIndex, valueToCheck) {
-            const iframe = document.querySelector('iframe');
-            const sheet = iframe.contentDocument.querySelector('table');
-            const rows = sheet.querySelectorAll('tr');
+        // Function to prevent the user from going back
+function preventBack() {
+      window.history.pushState(null, null, window.location.href);
+      window.onpopstate = function () {
+        window.history.pushState(null, null, window.location.href);
+      };
+    }
 
-            // Start from the second row (skipping headers)
-            for (let i = 1; i < rows.length; i++) {
-                const cell = rows[i].cells[columnIndex];
-                const cellValue = cell.textContent.trim();
-
-                // Check if the value matches
-                if (cellValue === valueToCheck) {
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        // Function to handle form submission and check if data already exists
-        function handleSubmit() {
-            const username = document.getElementById('username').value.trim();
-            const scno = document.getElementById('scno').value.trim();
-            const email = document.getElementById('email').value.trim();
-
-            // Check if username exists
-            if (checkIfExists(0, username)) {
-                alert('Username already exists.');
-            }
-            // Check if scno exists
-            else if (checkIfExists(2, scno)) {
-                alert('Scholar Number already exists.');
-            }
-            // Check if email exists
-            else if (checkIfExists(3, email)) {
-                alert('Email already exists.');
-            }
-            // If none of the data exists, submit the form
-            else {
-                alert('Data is valid and can be submitted.');
-                // Add code to submit the form or take further action here
-            }
-        }
-
-        // Add an event listener for form submission
-        document.getElementById('submit-button').addEventListener('click', handleSubmit);
+    // Call the preventBack function to prevent going back
+    preventBack();
     </script>
 </body>
 </html>
